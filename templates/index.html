@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <form action="{{ url_for('predict') }}" method="post">
+        <label for="under_construction">Under Construction:</label>
+        <select id="under_construction" name="under_construction" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="rera">RERA:</label>
+        <select id="rera" name="rera" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+
+        <label for="bhk_no">BHK No.:</label>
+        <input type="number" id="bhk_no" name="bhk_no" required>
+
+        <label for="square_ft">Square Feet:</label>
+        <input type="number" id="square_ft" name="square_ft" required>
+
+        <label for="ready_to_move">Ready to Move:</label>
+        <select id="ready_to_move" name="ready_to_move" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="resale">Resale</label>
+        <select id="resale" name="resale" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+        <input type="hidden" id="latitude" name="latitude">
+        <input type="hidden" id="longitude" name="longitude">
+
+        <label for="bhk_or_rk">BHK or RK:</label>
+        <select id="bhk_or_rk" name="bhk_or_rk" required>
+            <option value="BHK">BHK</option>
+            <option value="RK">RK</option>
+        </select>
+
+        <label for="posted_by">Posted By:</label>
+        <select id="posted_by" name="posted_by" required>
+            <option value="Dealer">Dealer</option>
+            <option value="Owner">Owner</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+</body>
+</html>
